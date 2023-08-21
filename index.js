@@ -4,17 +4,17 @@ const app = express();
 const PORT = process.env.PORT || 8000;
 
 //sass
-const sassMiddleware= require('node-sass-middleware');
-const path = require('path');
-const destPath = './assets/css';
-app.use(sassMiddleware({
-    /* Options */
-    src: './assets/scss',
-    dest: path.join('./assets/css'),
-    debug: true,
-    outputStyle:'compact',
-    prefix:  '/css'  // Where prefix is at <link rel="stylesheets" href="prefix/style.css"/>
-  }));
+// const sassMiddleware= require('node-sass-middleware');
+// const path = require('path');
+// const destPath = './assets/css';
+// app.use(sassMiddleware({
+//     /* Options */
+//     src: './assets/scss',
+//     dest: path.join('./assets/css'),
+//     debug: true,
+//     outputStyle:'compact',
+//     prefix:  '/css'  // Where prefix is at <link rel="stylesheets" href="prefix/style.css"/>
+//   }));
 
 const env = require('./config/environment');
 
