@@ -1,0 +1,44 @@
+<script>
+  $('#signin-form-data').submit(function (event) {
+    event.preventDefault();
+    grecaptcha.reset();
+    grecaptcha.execute();
+  });
+  function onSubmit(token) {
+    document.getElementById("signin-form-data").submit();
+  }
+</script>
+<div class="main-div" id="login-div">
+  <h1>Login</h1>
+
+  <div class="main-form-div" id="login-form-div">
+
+    <form action="/create-session" method="POST" id="signin-form-data">
+      <input type="email" name="email" id="email" placeholder="Enter Email" required> <br>
+      <div class="pass-div">
+        <input type="password" name="password" placeholder="Password" class="toggle-visibility" required>
+        <i class="fa-solid fa-eye pass-eye"></i>
+      </div>
+      <a href="/forget-password">
+        <p>Having trouble in sign in?</p>
+      </a>
+      <div class="g-recaptcha" data-sitekey="6Le4CuklAAAAAEZdqvEcyrrhyUpSza6FYsNIzlQl" data-callback="onSubmit"
+        data-size="invisible">
+      </div>
+      <button class="btn login-btn" type="submit">Sign in</button>
+    </form>
+  </div>
+
+
+  <div class="google-signin-div">
+    <p>&mdash; Or Sign in with &mdash;</p>
+
+    <button onclick="location.href='/auth/google'" class="google-btn">
+      <img src="/images/google.svg" alt="">
+      <p><strong>Google</strong></p>
+    </button>
+
+    <p>New User? <a href="/signup">Register</a> </p>
+  </div>
+
+</div>
