@@ -10,7 +10,7 @@ const { google } = require('googleapis');
     passport.use(new GoogleStrategy({
       clientID: "828861231482-r0n4268ub9ksraibm8a8k25391vvuue7.apps.googleusercontent.com",
       clientSecret: "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",
-      callbackURL: "http://localhost:8000/auth/google/callback"
+      callbackURL: "https://node-js-auth-u1wz.onrender.com/auth/google/callback"
   }, function(accessToken, refreshToken, profile, done) {
       User.findOne({ email: profile.emails[0].value })
           .then(user => {
